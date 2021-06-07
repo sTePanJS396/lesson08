@@ -46,15 +46,7 @@ let appData = {
         do {
                 addExpenses = prompt('Перечисли возможные расходы за определенный период через запятую');
             } while (!isNaN(addExpenses) || addExpenses.trim() === '' || addExpenses === null);
-        appData.addExpenses = addExpenses.split(' , ').map(word => { return word[0].toUpperCase() + word.slice(1)} );
-        // appData.addExpenses.forEach(function (item, i) {
-        //     item = item.charAt(0).toUpperCase() + item.substr(1);
-        //     console.log(item);
-        // }) 
-        // for (let word in appData.addExpenses) {
-        // word = word.charAt(0).toUpperCase() + word.substr(1);
-        // console.log(word);
-        // }
+        appData.addExpenses = addExpenses.split(', ').map(word => { return word[2].toUpperCase() + word.slice(1)} );
         appData.deposit = confirm('У тебя есть депозит в банке? Нажми OK, если есть.');
         while (i < 2) {
              do {
@@ -152,9 +144,3 @@ console.log('Расходы на месяц составили: ' + appData.expe
 for (let key in appData) {
     console.log( "Ключ: " + key + " значение: " + appData[key] );
 }
-
-
-
-a = appData.addExpenses
-a = a.map(word => { return word.charAt(0).toUpperCase() + word.slice(1)} );
-console.log(a);
