@@ -5,7 +5,7 @@ let isNumber = function(n) {
 
 function start() {
     do {
-        money = prompt('Какой твой месячный доход?');
+        money = +prompt('Какой твой месячный доход?');
     } while(isNaN(money) || money === '' || money === null);    
 };
 
@@ -71,7 +71,7 @@ let appData = {
     },
 
     getBudget: function() {
-        return appData.budget - appData.expensesMonth;
+        return appData.budgetMonth = appData.budget - appData.expensesMonth;
     },
 
     getTargetMonth: function() {
@@ -121,7 +121,7 @@ appData.getBudget();
 
 appData.getTargetMonth();
 
-appData.budgetDay = appData.getBudget();
+appData.budgetDay = appData.getBudgetDay();
 
 appData.getStatusIncome();
 
